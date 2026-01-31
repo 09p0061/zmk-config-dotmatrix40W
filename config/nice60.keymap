@@ -20,6 +20,7 @@
     &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C
     &kp E &kp E &kp E &kp E &kp E &kp E &kp E &kp E &kp E &kp E &kp E &kp E
             >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
         rgb_layer {
@@ -29,6 +30,7 @@
     &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C &kp C
     &kp D &kp D &kp D &kp D &kp D &kp D &kp D &kp D &kp D &kp D &kp D &kp D
             >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
     };
 };
