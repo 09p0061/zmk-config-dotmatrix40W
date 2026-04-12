@@ -99,7 +99,7 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
-        zmk,backlight = &pwm_led_0;
+        zmk,backlight = &backlight;
     };
 
     physical_layout0: physical_layout_0 {
