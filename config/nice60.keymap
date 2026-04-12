@@ -10,6 +10,14 @@
 #include <dt-bindings/zmk/bt.h>    // Bluetooth management
 #include <dt-bindings/zmk/backlight.h> // Backlight control
 / {
+    behaviors {
+        bl_encoder: bl_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&bl BL_INC>, <&bl BL_DEC>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -40,6 +48,7 @@
     &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none                &bt BT_CLR  &none  &none  &none  &none
             >;
+            sensor-bindings = <&bl_encoder>;
         };
     };
 };
