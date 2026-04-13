@@ -11,6 +11,13 @@
 #include <dt-bindings/zmk/backlight.h> // Backlight control
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 50 // Increase scroll speed for encoder
 #include <dt-bindings/zmk/pointing.h> // Mouse emulation
+
+&msc {
+    acceleration-exponent = <0>;      // 0 = constant speed
+    time-to-max-speed-ms = <0>;       // 0 = instant max speed
+    delay-ms = <0>;                   // 0 = instant start
+};
+
 / {
     behaviors {
         bl_encoder: bl_encoder {
@@ -19,10 +26,9 @@
             bindings = <&bl BL_INC>, <&bl BL_DEC>;
         };
         msc_scrl: msc_scrl {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <30>;
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
         };
     };
 
@@ -36,7 +42,7 @@
     &kp LSHIFT &kp Z      &kp X      &kp C      &kp V      &kp B      &kp N      &kp M      &kp COMMA  &kp DOT    &kp UP     &kp FSLH
     &mo 1      &kp LCTRL  &kp LALT   &kp LANG2  &kp SPACE                        &kp RET    &kp LANG1  &kp LEFT   &kp DOWN   &kp RIGHT
             >;
-            sensor-bindings = <&msc_scrl>;
+            sensor-bindings = <&msc_scrl SCRL_DOWN SCRL_UP>;
         };
 
         first_layer {
