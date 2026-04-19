@@ -32,8 +32,14 @@
         <&gpio0 14 GPIO_ACTIVE_HIGH>;
 };
 
-&blue_led {
-    status = "disabled";
+/ {
+    blue_led_test {
+         compatible = "regulator-fixed";
+         regulator-name = "blue_led_test";
+         enable-gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+         regulator-boot-on;
+         regulator-always-on;
+    };
 };
 
 &pinctrl {
