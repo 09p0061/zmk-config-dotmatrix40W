@@ -1,0 +1,7 @@
+board:
+  name: dotmatrix40W
+  vendor: custom
+  socs:
+    - name: nrf52840
+      variants:
+        - name: zmk
