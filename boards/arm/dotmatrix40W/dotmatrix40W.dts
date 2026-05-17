@@ -78,8 +78,8 @@
     vbatt: vbatt {
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 0>;
-        output-ohms = <503000>;
-        full-ohms = <(1000000 + 503000)>;
+        output-ohms = <135>;
+        full-ohms = <420>;
     };
 
     backlight: pwmleds {
