@@ -67,3 +67,10 @@
         };
     };
 };
+
+// Override msc behavior to remove acceleration and delay for immediate encoder response
+&msc {
+    acceleration-exponent = <0>;
+    time-to-max-speed-ms = <0>;
+    delay-ms = <0>;
+};
