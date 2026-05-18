@@ -10,20 +10,27 @@
 #include <dt-bindings/zmk/bt.h>    // Bluetooth management
 #include <dt-bindings/zmk/backlight.h> // Backlight control
 #include <dt-bindings/zmk/pointing.h> // Pointing/mouse control
+
+// カスタムスクロール量（エンコーダの一瞬の入力でも1行スクロールに達するように大きく設定）
+#define SCRL_UP_FAST   MOVE_Y(50)
+#define SCRL_DOWN_FAST MOVE_Y(-50)
+#define SCRL_LEFT_FAST MOVE_X(-50)
+#define SCRL_RIGHT_FAST MOVE_X(50)
+
 / {
     behaviors {
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <15>;
+            bindings = <&msc SCRL_DOWN_FAST>, <&msc SCRL_UP_FAST>;
+            tap-ms = <50>;
         };
 
         scroll_encoder_h: scroll_encoder_h {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
-            tap-ms = <15>;
+            bindings = <&msc SCRL_RIGHT_FAST>, <&msc SCRL_LEFT_FAST>;
+            tap-ms = <50>;
         };
 
         bl_encoder: bl_encoder {
@@ -59,7 +66,7 @@
         second_layer {
             bindings = <
     &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR
-    &msc SCRL_UP  &msc SCRL_DOWN  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none                &none  &none  &none  &none  &none
             >;
