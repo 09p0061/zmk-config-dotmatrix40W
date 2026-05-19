@@ -1,5 +1,8 @@
 {
     "keyboard_name": "dotmatrix40W",
+    "features": {
+        "encoders": true
+    },
     "layouts": {
         "LAYOUT": {
             "layout": [
