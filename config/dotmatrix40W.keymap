@@ -236,7 +236,7 @@
             bindings = <
 &kp ESC  &kp F10  &kp F11  &kp F12  &moF    &none  &none  &moG     &kp KP_PLUS      &mo7    &mo8        &mo9
 &trans   &kp F7   &kp F8   &kp F9   &moE    &none  &none  &moH     &kp KP_MINUS     &kp N4  &kp N5      &mo6
-&trans   &kp F4   &kp F5   &kp F6   &moD    &none  &moI   &moC     &kp KP_MULTIPLY  &kp N1  &mo2        &kp N3
+&trans   &kp F4   &kp F5   &kp F6   &moD    &moB   &moI   &moC     &kp KP_MULTIPLY  &kp N1  &mo2        &kp N3
 &trans   &kp F1   &kp F2   &kp F3   &mo 2                 &kp DEL  &kp KP_DIVIDE    &mo0    &kp KP_DOT  &kp KP_EQUAL
             >;
 
