@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // JIS layout fixes for Japanese OS settings
+
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -228,11 +229,12 @@
             // | SHIFT |   Z   |   X   |   C   |   V   |   B   |   N   |   M   | , / < | . / > |  UP   | / / ? |
             // |  L1   | CTRL  |  ALT  | EISU  |     SPACE     |     ENTER     | KANA  | LEFT  | DOWN  | RIGHT |
             // -------------------------------------------------------------------------------------------------
+
             bindings = <
-            &moA        &kp Q      &kp W     &kp E      &kp R   &kp T  &kp Y  &kp U  &kp I      &kp O     &kp P     &kp BSPC
-            &kp TAB     &kp A      &kp S     &kp D      &kp F   &kp G  &kp H  &kp J  &kp K      &kp L     &moF      &moG
-            &kp LSHIFT  &kp Z      &kp X     &kp C      &kp V   &kp B  &kp N  &kp M  &kp COMMA  &kp DOT   &kp UP    &kp FSLH
-            &mo 1       &kp LCTRL  &kp LALT  &kp LANG2  &kp SPACE           &kp RET  &kp LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
+&moA        &kp Q      &kp W     &kp E      &kp R      &kp T  &kp Y  &kp U    &kp I      &kp O     &kp P     &kp BSPC
+&kp TAB     &kp A      &kp S     &kp D      &kp F      &kp G  &kp H  &kp J    &kp K      &kp L     &moF      &moG
+&kp LSHIFT  &kp Z      &kp X     &kp C      &kp V      &kp B  &kp N  &kp M    &kp COMMA  &kp DOT   &kp UP    &kp FSLH
+&mo 1       &kp LCTRL  &kp LALT  &kp LANG2  &kp SPACE                &kp RET  &kp LANG1  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings = <&encoder_scroll_v>;
@@ -245,11 +247,12 @@
             // |       |  F4   |  F5   |  F6   | @ / ` | ^ / ~ | \ / _ | \ / | |   *   | 1 / ! | 2 / " | 3 / # |
             // |       |  F1   |  F2   |  F3   |      L2       |      DEL      |   /   |   0   |   .   |   =   |
             // -------------------------------------------------------------------------------------------------
+
             bindings = <
-            &kp ESC  &kp F10  &kp F11  &kp F12  &moF  &none  &none  &moG  &kp KP_PLUS      &mo7    &mo8        &mo9
-            &trans   &kp F7   &kp F8   &kp F9   &moE  &none  &none  &moH  &kp KP_MINUS     &kp N4  &kp N5      &mo6
-            &trans   &kp F4   &kp F5   &kp F6   &moD  &moB   &moI   &moC  &kp KP_MULTIPLY  &kp N1  &mo2        &kp N3
-            &trans   &kp F1   &kp F2   &kp F3   &mo 2            &kp DEL  &kp KP_DIVIDE    &mo0    &kp KP_DOT  &kp KP_EQUAL
+&kp ESC  &kp F10  &kp A   &kp F12  &moF   &none  &none  &moG     &kp KP_PLUS      &mo7    &mo8        &mo9
+&trans   &kp F7   &kp F8  &kp F9   &moE   &none  &none  &moH     &kp KP_MINUS     &kp N4  &kp N5      &mo6
+&trans   &kp F4   &kp F5  &kp F6   &moD   &moB   &moI   &moC     &kp KP_MULTIPLY  &kp N1  &mo2        &kp N3
+&trans   &kp F1   &kp F2  &kp F3   &mo 2                &kp DEL  &kp KP_DIVIDE    &mo0    &kp KP_DOT  &kp KP_EQUAL
             >;
 
             sensor-bindings = <&encoder_scroll_h>;
@@ -262,11 +265,12 @@
             // |       |       |       |       |       |       |       |       |       | BT 1  | BT 2  | BT 3  |
             // |       |       |       |       |               |               |       | BT 0  |       |       |
             // -------------------------------------------------------------------------------------------------
+
             bindings = <
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none         &none         &bt BT_CLR
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none         &none         &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-            &none  &none  &none  &none  &none                &none  &none  &bt BT_SEL 0  &none         &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none         &none         &bt BT_CLR
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none         &none         &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+&none  &none  &none  &none  &none                &none  &none  &bt BT_SEL 0  &none         &none
             >;
 
             sensor-bindings = <&encoder_backlight>;
@@ -274,19 +278,19 @@
 
         layer_3 {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         layer_4 {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
@@ -302,4 +306,3 @@
 
 // Special thanks to the following repository for reference and inspiration:
 // https://github.com/kureyakey/zmk-config-zonkey
-
